@@ -5,7 +5,7 @@ local SolarLibrary = loadstring(game:HttpGet(('https://raw.githubusercontent.com
 # Creating a Window
 ```lua
 SolarLibrary:NewWindow(true, "Skibidi", 1, false, "Hi")
---[
+--[[
 Name = <String> - Name of the UI
 Wait Till Open = <Number> - Time it takes till it opens
 KeySystem = <bool> - Whether if you want it to make the Keysystem on
