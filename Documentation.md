@@ -29,4 +29,5 @@ ElementName = <String> - The Element Name
 ElementType = <String> - The Element Type (This will be used later in the documentation)
 ElementParent = <Tab> - The Elements Parent (IT NEEDS TO BE A TAB!1!1!1!1)
 Script = <LocalScript> - a code that will fire once u click the button
+]]
 ```
