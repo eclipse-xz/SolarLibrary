@@ -22,12 +22,31 @@ TabImage = <String> - You can set it to nothing and it will be the standard tab 
 ```
 # Creating a New button
 ```lua
-SolarLibrary::NewElement("Button","Button",Tab,print(`hi`))
+SolarLibrary::NewElement("Button","Button",Tab,print('Hi'))
 
--- [[ 
+--[[ 
 ElementName = <String> - The Element Name
 ElementType = <String> - The Element Type (This will be used later in the documentation)
-ElementParent = <Tab> - The Elements Parent (IT NEEDS TO BE A TAB!1!1!1!1)
+ElementParent = <Tab> - The Elements Parent (IT NEEDS TO BE A TAB !1!1!1!1)
 Script = <LocalScript> - a code that will fire once u click the button
 ]]
 ```
+
+# Creating a New toggle
+```lua
+local toggle = SolarLibrary:NewToggle("Toggle", Tab, function(newValue)
+	if newValue then
+		print("Hi")
+	else
+		print("Bye")
+	end
+end)
+
+--[[
+ToggleName = <String> - The Toggle Name
+ToggleParent = <Tab> - The Toggle Parent
+newValue = <Bool> - When the value is changed (it needs to be put in a function>
+]]
+```
+
+
