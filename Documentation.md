@@ -22,7 +22,7 @@ TabImage = <String> - You can set it to nothing and it will be the standard tab 
 ```
 # Creating a New button
 ```lua
-SolarLibrary::NewElement("Button","Button",Tab,print('Hi'))
+SolarLibrary:NewElement("Button","Button",Tab,print('Hi'))
 
 --[[ 
 ElementName = <String> - The Element Name
@@ -34,7 +34,7 @@ Script = <LocalScript> - a code that will fire once u click the button
 
 # Creating a New toggle
 ```lua
-local toggle = SolarLibrary:NewToggle("Toggle", Tab, function(newValue)
+SolarLibrary:NewToggle("Toggle", Tab, function(newValue)
 	if newValue then
 		print("Hi")
 	else
@@ -45,8 +45,28 @@ end)
 --[[
 ToggleName = <String> - The Toggle Name
 ToggleParent = <Tab> - The Toggle Parent
-newValue = <Bool> - When the value is changed (it needs to be put in a function>
+newValue = <Bool> - When the value is changed <Recommended to use in a if, u can use it in other stuff>
 ]]
 ```
 
+# Creating a New Notification
+```lua
+SolarLibrary:NewNotification("A New Thingy", "Hiya!")
 
+--[[
+Title = <String> - The Notification's Title
+Description = <String> - The Notification's Description
+--
+]]
+```
+
+# Creating a New Element
+```lua
+SolarLibrary:NewElement("Button","Button",Tab,print('Hi'))
+
+--[[ 
+ElementName = <String> - The Element Name
+ElementType = <String> - The Element Type (All of the types - NEEDS TO BE IN THE SAME CAPS : Info,Warn,Important,Text)
+ElementParent = <Tab> - The Elements Parent (IT NEEDS TO BE A TAB !1!1!1!1)
+]]
+```
