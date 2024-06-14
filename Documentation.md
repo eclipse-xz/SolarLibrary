@@ -62,7 +62,7 @@ Description = <String> - The Notification's Description
 
 # Creating a New Element
 ```lua
-SolarLibrary:NewElement("Button","Button",Tab,print('Hi'))
+SolarLibrary:NewElement("Text","Text",Tab,print('Hi'))
 
 --[[ 
 ElementName = <String> - The Element Name
