@@ -1,5 +1,8 @@
 local SolarLibrary = {}
 
+local CurrentTab = Instance.new("TextLabel")
+local Frame1 = Instance.new("Frame")
+local HashTag = Instance.new("TextLabel")
 local SolarLibraryGUI = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -144,48 +147,6 @@ Main.Position = UDim2.new(0.303608716, 0, 0.304511338, 0)
 Main.Size = UDim2.new(0, 549, 0, 332)
 Main.Visible = false
 
-local UI = Main
-
-
-local Hovered = false
-local Holding = false
-local MoveCon = nil
-
-local InitialX, InitialY, UIInitialPos
-
-local function Drag()
-	if Holding == false then MoveCon:Disconnect(); return end
-	local distanceMovedX = InitialX - Mouse.X
-	local distanceMovedY = InitialY - Mouse.Y
-
-	UI.Position = UIInitialPos - UDim2.new(0, distanceMovedX, 0, distanceMovedY)
-end
-
-UI.MouseEnter:Connect(function()
-	Hovered = true
-end)
-
-UI.MouseLeave:Connect(function()
-	Hovered = false
-end)
-
-UIS.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-		Holding = Hovered
-		if Holding then
-			InitialX, InitialY = Mouse.X, Mouse.Y
-			UIInitialPos = UI.Position
-
-			MoveCon = Mouse.Move:Connect(Drag)
-		end
-	end
-end)
-
-UIS.InputEnded:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-		Holding = false
-	end
-end)
 
 UICorner.Parent = Main
 
@@ -868,6 +829,53 @@ KeySystem.Position = UDim2.new(0.305835873, 0, 0.303108811, 0)
 KeySystem.Size = UDim2.new(0, 549, 0, 332)
 KeySystem.Visible = false
 
+HashTag.Name = "HashTag"
+HashTag.Parent = TopBar
+HashTag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HashTag.BackgroundTransparency = 1.000
+HashTag.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HashTag.BorderSizePixel = 0
+HashTag.Position = UDim2.new(0.154826954, 0, -0.258064508, 0)
+HashTag.Size = UDim2.new(0, 200, 0, 50)
+HashTag.Font = Enum.Font.GothamBold
+HashTag.Text = "#"
+HashTag.TextColor3 = Color3.fromRGB(132, 132, 132)
+HashTag.TextSize = 29.000
+HashTag.TextTransparency = 0.630
+
+CurrentTab.Name = "CurrentTab"
+CurrentTab.Parent = TopBar
+CurrentTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CurrentTab.BackgroundTransparency = 1.000 
+CurrentTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CurrentTab.BorderSizePixel = 0
+CurrentTab.Position = UDim2.new(0.227686703, 0, -0.193548381, 0)
+CurrentTab.Size = UDim2.new(0, 200, 0, 50)
+CurrentTab.Font = Enum.Font.GothamBold
+CurrentTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+CurrentTab.TextSize = 21.000
+CurrentTab.TextWrapped = true
+CurrentTab.Text = "Main"
+
+
+UIS.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		Holding1 = Hovered1
+		if Holding1 then
+			InitialX1, InitialY1 = Mouse.X, Mouse.Y
+			UIInitialPos1 = UI1.Position
+
+			MoveCon1 = Mouse.Move:Connect(Drag1)
+		end
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		Holding1 = false
+	end
+end)
+
 KeyThingy.Name = "KeyThingy"
 KeyThingy.Parent = KeySystem
 KeyThingy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1145,22 +1153,70 @@ NotfiDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
 NotfiDesc.TextSize = 12.000
 NotfiDesc.TextWrapped = true
 
+Frame1.Parent = TopBar
+Frame1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame1.BorderSizePixel = 0
+Frame1.Position = UDim2.new(0.275045544, 0, 0, 0)
+Frame1.Size = UDim2.new(0, 1, 0, 39)
+
 function SolarLibrary.IsRunning()
 	repeat wait() until game.Players.LocalPlayer.Character   
 end
 
+local UI = Main
+local UI1 = KeySystem
+
+local Hovered = false
+local Holding = false
+local MoveCon = nil
+
+local InitialX, InitialY, UIInitialPos
+
+local function Drag()
+	if Holding == false then MoveCon:Disconnect(); return end
+	local distanceMovedX = InitialX - Mouse.X
+	local distanceMovedY = InitialY - Mouse.Y
+
+	UI.Position = UIInitialPos - UDim2.new(0, distanceMovedX, 0, distanceMovedY)
+	UI1.Position = UIInitialPos - UDim2.new(0, distanceMovedX, 0, distanceMovedY)
+end
+
+UI.MouseEnter:Connect(function()
+	Hovered = true
+end)
+
+UI.MouseLeave:Connect(function()
+	Hovered = false
+end)
+
+UIS.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		Holding = Hovered
+		if Holding then
+			InitialX, InitialY = Mouse.X, Mouse.Y
+			UIInitialPos = UI.Position
+			UIInitialPos = UI1.Position
+
+			MoveCon = Mouse.Move:Connect(Drag)
+		end
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		Holding = false
+	end
+end)
+
+
 Exitbtn.MouseButton1Click:Connect(function()
 	SolarLibrary.IsRunning()
-	Close.Visible = true
-	Close:TweenPosition(UDim2.new(0.409, 0,0.491, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 0.1, true)
-end)
-No.MouseButton1Click:Connect(function()
-	Close.Visible = false
-	Close.Position = UDim2.new(0.408, 0,0.768, 0)
-end)
-Yes.MouseButton1Click:Connect(function()
-	Close.Visible = false
 	SolarLibraryGUI:Destroy()
+end)
+Exitbtn_2.MouseButton1Click:Connect(function()
+		SolarLibrary.IsRunning()
+		SolarLibraryGUI:Destroy()
 end)
 
 function SolarLibrary:NewTab(TabName, TabImage1 )
@@ -1200,6 +1256,7 @@ function SolarLibrary:NewTab(TabName, TabImage1 )
 		end
 
 		TabCopy.Visible = true
+		CurrentTab.Text = TabCopy.Name
 	end)
 
 	return TabCopy
