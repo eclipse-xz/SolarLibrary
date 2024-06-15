@@ -829,33 +829,7 @@ KeySystem.Position = UDim2.new(0.305835873, 0, 0.303108811, 0)
 KeySystem.Size = UDim2.new(0, 549, 0, 332)
 KeySystem.Visible = false
 
-HashTag.Name = "HashTag"
-HashTag.Parent = TopBar
-HashTag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-HashTag.BackgroundTransparency = 1.000
-HashTag.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HashTag.BorderSizePixel = 0
-HashTag.Position = UDim2.new(0.154826954, 0, -0.258064508, 0)
-HashTag.Size = UDim2.new(0, 200, 0, 50)
-HashTag.Font = Enum.Font.GothamBold
-HashTag.Text = "#"
-HashTag.TextColor3 = Color3.fromRGB(132, 132, 132)
-HashTag.TextSize = 29.000
-HashTag.TextTransparency = 0.630
 
-CurrentTab.Name = "CurrentTab"
-CurrentTab.Parent = TopBar
-CurrentTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CurrentTab.BackgroundTransparency = 1.000 
-CurrentTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CurrentTab.BorderSizePixel = 0
-CurrentTab.Position = UDim2.new(0.227686703, 0, -0.193548381, 0)
-CurrentTab.Size = UDim2.new(0, 200, 0, 50)
-CurrentTab.Font = Enum.Font.GothamBold
-CurrentTab.TextColor3 = Color3.fromRGB(255, 255, 255)
-CurrentTab.TextSize = 21.000
-CurrentTab.TextWrapped = true
-CurrentTab.Text = "Main"
 
 
 UIS.InputBegan:Connect(function(input)
@@ -1153,12 +1127,7 @@ NotfiDesc.TextColor3 = Color3.fromRGB(255, 255, 255)
 NotfiDesc.TextSize = 12.000
 NotfiDesc.TextWrapped = true
 
-Frame1.Parent = TopBar
-Frame1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame1.BorderSizePixel = 0
-Frame1.Position = UDim2.new(0.275045544, 0, 0, 0)
-Frame1.Size = UDim2.new(0, 1, 0, 39)
+
 
 function SolarLibrary.IsRunning()
 	repeat wait() until game.Players.LocalPlayer.Character   
