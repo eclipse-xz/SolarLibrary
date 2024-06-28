@@ -4,7 +4,7 @@ local SolarLibrary = loadstring(game:HttpGet(('https://raw.githubusercontent.com
 ```
 # Creating a Window
 ```lua
-SolarLibrary:NewWindow(true, "Window", 1, false, "Hi")
+SolarLibrary:NewWindow("Window", 1, false, "Hi")
 --[[
 Name = <String> - Name of the UI
 Wait Till Open = <Number> - Time it takes till it opens
@@ -14,7 +14,7 @@ Key = <String> - it can be a a link or a text, its the key for the keysystem.
 ```
 # Creating a New tab
 ```lua
-local Tab = SolarLibrary:NewTab(true,"NewTab", "rbxassetid://6821165844")
+local Tab = SolarLibrary:NewTab("NewTab", "rbxassetid://6821165844")
 --[[
 Name = <String> - The Name of the tab
 TabImage = <String> - You can set it to nothing and it will be the standard tab image or you can set it yourself, it needs to be a roblox assetid like this: (rbxassetid://11001100)
