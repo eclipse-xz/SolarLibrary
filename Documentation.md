@@ -68,5 +68,6 @@ SolarLibrary:NewElement("Text","Text",Tab,print('Hi'))
 ElementName = <String> - The Element Name
 ElementType = <String> - The Element Type (All of the types - NEEDS TO BE IN THE SAME CAPS : Info,Warn,Important,Text)
 ElementParent = <Tab> - The Elements Parent (IT NEEDS TO BE A TAB !1!1!1!1)
+Types Of Elements: Warn, Important, Info, Text
 ]]
 ```
