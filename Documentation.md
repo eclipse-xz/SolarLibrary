@@ -1,6 +1,6 @@
 # Booting the Library
 ```lua
-local SolarLibrary = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Riv3rZZ/SolarLibrary/main/source')))()
+local SolarLibrary = loadstring(game:HttpGet(('https://raw.githubusercontent.com/eclipse-xz/SolarLibrary/main/source')))()
 ```
 # Creating a Window
 ```lua
